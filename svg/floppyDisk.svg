@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="emoji" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 72 72" style="enable-background:new 0 0 72 72;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#3F3F3F;}
+	.st1{fill:#D0CFCE;}
+	.st2{fill:#9B9B9A;}
+	.st3{fill:#61B2E4;}
+	.st4{fill:none;stroke:#000000;stroke-width:2.7298;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g id="color">
+	<rect x="2" y="1.9" class="st0" width="68.2" height="68.2"/>
+	<polyline class="st1" points="63.4,68.8 63.4,34.9 8.8,34.9 8.8,68.8 	"/>
+	<polyline class="st2" points="8.8,3.2 8.8,27.3 51,27.3 51,3.2 	"/>
+	<rect x="14.2" y="40.1" class="st3" width="43.7" height="8"/>
+</g>
+<g id="hair">
+</g>
+<g id="skin">
+</g>
+<g id="skin-shadow">
+</g>
+<g id="line">
+	<rect x="2" y="1.9" class="st4" width="68.2" height="68.2"/>
+	<polyline class="st4" points="63.4,68.8 63.4,34.9 8.8,34.9 8.8,68.8 	"/>
+	<polyline class="st4" points="8.8,3.2 8.8,27.3 51,27.3 51,3.2 	"/>
+	<rect x="14.2" y="40.1" class="st4" width="43.7" height="8"/>
+</g>
+</svg>

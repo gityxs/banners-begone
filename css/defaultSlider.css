@@ -1,0 +1,123 @@
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 8px 0;
+    width: 100%;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #474f80;
+    border: 1px solid rgb(20, 20, 32);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -4.75px;
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+    background-color: #5665c2;
+    border: 1px solid rgb(20, 20, 32);
+}
+
+input[type=range]::-moz-range-track {
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #474f80;
+    border: 1px solid rgb(20, 20, 32);
+}
+
+input[type=range]::-moz-range-progress {
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #6b77c4;
+    border: 1px solid rgb(20, 20, 32);
+}
+
+input[type=range]::-moz-range-thumb {
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: -4.75px;
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+    background-color: #5665c2;
+    border: 1px solid rgb(20, 20, 32);
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    /*border-width: 16px 0;*/
+    color: transparent;
+    box-sizing: border-box;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #6b77c4;
+    border: 1px solid rgb(20, 20, 32);
+    border-radius: 4px;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #474f80;
+    border: 1px solid rgb(20, 20, 32);
+    border-radius: 4px;
+}
+
+input[type=range]::-ms-thumb {
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+    background-color: #5665c2;
+    border: 1px solid rgb(20, 20, 32);
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #6b77c4;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #474f80;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    /* for vertical scrollbars */
+    height: 10px;
+    /* for horizontal scrollbars */
+    overflow: hidden;
+}
+::-webkit-scrollbar-track {
+    background: none;
+    border: none;
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+    opacity: 1;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(89, 65, 128);
+    border-radius: 5px;
+}

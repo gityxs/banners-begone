@@ -1,0 +1,654 @@
+.inputElement_adSelloutComponent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.adSelloutComponent_buyButton {
+    width: 80%;
+    height: auto;
+    max-height: 40%;
+    margin: 2% 10%;
+    flex-grow: 1;
+}
+.adSelloutComponent_stats > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0.5vh;
+}
+.adSelloutComponent_stats > div > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+.inputElement_investementComponent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+.investementComponent_buyButton {
+    width: 80%;
+    height: auto;
+    max-height: 40%;
+    margin: 2% 10%;
+    flex-grow: 1;
+}
+.investementComponent_stats > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0.5vh;
+}
+.investementComponent_stats > div > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.tool_hintDisplay {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+}
+.tool_hint {
+    text-align: center;
+    vertical-align: middle;
+    opacity: 0.5;
+}
+.hintDisplayBlink {
+    opacity: 0;
+    animation: hint_display_blink 0.25s linear infinite;
+}
+@keyframes hint_display_blink {
+    0% { opacity: 0; }
+    5% { opacity: 1; }  
+    100% { opacity: 0; }
+}
+
+
+
+.inputElement_passiveIncomeComponent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+.passiveIncomeComponent_buyButton {
+    width: 80%;
+    height: auto;
+    max-height: 40%;
+    margin: 2% 10%;
+    flex-grow: 1;
+}
+.passiveIncomeComponent_stats > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0.5vh;
+    margin-bottom: 0.25vh;
+}
+.passiveIncomeComponent_stats > div > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+div.succeededFull {
+    animation: div_succeededFull_anim 0.25s ease-out;
+}
+@keyframes div_succeededFull_anim {
+    0% { background-color:  rgb(107, 255, 87); box-shadow: 0 0 5px rgb(107, 255, 87), 0 0 10px rgb(107, 255, 87), 0 0 15px rgb(107, 255, 87); }
+    100% { box-shadow: none;}
+}
+div.succeededFull_dim {
+    animation: div_succeededFull_dim_anim 0.25s ease-out;
+}
+@keyframes div_succeededFull_dim_anim {
+    0% { box-shadow: 
+            0 0 5px rgb(107, 255, 87), 0 0 10px rgb(107, 255, 87), 0 0 15px rgb(107, 255, 87),
+            inset 0 0 50px rgb(107, 255, 87), 0 0 100px rgb(107, 255, 87), 0 0 150px rgb(107, 255, 87);}
+    100% { box-shadow: none;}
+}
+.supriseSpawnedFromAI {
+    animation: spawnedFromAI_anim_surprise 5s ease-out;
+    box-shadow: 0 0 5px rgb(107, 255, 87);
+}
+@keyframes spawnedFromAI_anim_surprise {
+    0% { }
+    100% { }
+}
+.passiveIncomeComponent_timerUnavailable {
+    white-space: pre;
+    margin: 0.25vh 0;
+}
+.passiveIncomeComponent_spawnHint {
+    pointer-events: none;
+    position: relative;
+    min-height: 0;
+    min-width: 0;
+    width: calc(100% - 1vh);
+    height: calc(100% - 1vh);
+    z-index: 10;
+    overflow: visible;
+    white-space: nowrap; 
+
+    border-radius: 1vh;
+    margin: 0.5vh;
+    animation: passiveIncomeComponent_spawnHint 5s ease-out;
+}
+@keyframes passiveIncomeComponent_spawnHint {
+    0% { background-color: rgb(107, 255, 87); box-shadow: 0 0 10px rgb(107, 255, 87), 0 0 15px rgb(107, 255, 87); }
+    100% { box-shadow: none;}
+}
+
+.inputElement_surpriseMechanicComponent {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    z-index: 0;
+}
+.surpriseMechanicComponent_buyButton {
+    width: 80%;
+    
+    height: auto;
+    margin: 2% 10%;
+    flex-grow: 1;
+}
+.surpriseMechanicComponent_stats {
+    font-size: 80%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+.surpriseMechanicComponent_rewardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.surpriseMechanicComponent_progress {
+    position: absolute;
+    background-color: rgb(95, 55, 200);
+    opacity: 1;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 1vh;
+}
+
+
+
+/*
+#mainInteractionArea {
+    grid-area: 5 / 5 / 6 / 6 !important;
+    margin:0.5vh !important;
+    z-index: 0 !important;
+}*/
+.inputElement_mainToolComponent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+    height:100%;
+    background-color: #2d325a;
+    justify-content: center;
+}
+.inputElement_mainToolComponent > p {
+    padding: 0;
+    text-align: center;
+    color:white;
+    opacity: 0.5;
+}
+.mainToolComponent_container {
+    background-color: #1f223d;
+    width:100%;
+    height:100%;
+}
+
+.inputElement_lockedToolComponent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+    height:100%;
+}
+.inputElement_lockedToolComponent > p {
+    padding: 0;
+    margin:auto;
+    text-align: center;
+}
+
+.inputElement_correctStreakComponent {
+    position: relative;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.correctStreakComponent_displayContainer {
+    position: relative;
+    width:100%;
+    height:100%;
+    
+}
+#correctStreakComponent_clickStrengthDisplay {
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.correctStreakComponent_display {
+    box-sizing: border-box;
+    position: absolute;
+    width: 70%;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+
+    border-radius: 1vh 1vh 0.5vh 0.5vh;
+    background-color: rgb(95, 55, 200);
+    border: 1px solid black;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.15);
+
+    font-size: 80%;
+    word-wrap: break-word;
+    overflow: hidden;
+
+    animation: punchCardMember_appear 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+    transform-origin: top;
+}
+@keyframes punchCardMember_appear {
+    0% { transform: translateY(-2vh) scaleY(0.9); opacity: 0; }
+    100% { transform: translateY(0)  scaleY(1); opacity: 1; }
+}
+.correctStreakComponent_display > p {
+    padding-top: 0.5vh;
+    text-align: center;
+}
+.correctStreakComponent_display_left {
+    left: 0;
+    border-bottom-right-radius: 0;
+    background-color: rgb(123, 83, 224);
+}
+.correctStreakComponent_display_right {
+    right: 0;
+    border-bottom-left-radius: 0;
+    background-color: rgb(77, 33, 190);
+}
+.correctStreakComponent_display_left.progressed {
+    animation: punchCardMember_left_progressed 0.2s ease-in forwards;
+}
+@keyframes punchCardMember_left_progressed {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(-10vh); opacity: 0; }
+}
+.correctStreakComponent_display_right.progressed {
+    animation: punchCardMember_right_progressed 0.2s ease-in forwards;
+}
+@keyframes punchCardMember_right_progressed {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(10vh); opacity: 0; }
+}
+.tool_stat.succeeded {
+    animation: tool_stat_succeeded 1s ease-out;
+}
+@keyframes tool_stat_succeeded {
+    10% { color:  rgb(107, 255, 87); text-shadow: 0 0 5px rgb(107, 255, 87), 0 0 10px rgb(107, 255, 87), 0 0 15px rgb(107, 255, 87); }
+    100% { color:  rgb(255, 255, 255); text-shadow: none;}
+}
+
+.inputElement_chargeMinigameComponent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.tool_statList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:100%;
+    margin-bottom: 0.25vh;
+}
+.tool_stat:first-child {
+    text-align: start;
+}
+.tool_stat:last-child {
+    text-align: end;
+}
+.chargeMinigameComponent_spinCounter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    max-height: 15%;
+    height: 100%;
+}
+.chargeMinigameComponent_spinPoint {
+    margin: 0.5vh;
+    width: 0.5vh;
+    border-radius: 0.25vh;
+    animation: spinPoint_visible 0.2s ease-out forwards;
+}
+.chargeMinigameComponent_spinPoint.invisible {
+    animation: spinPoint_invisible 0.2s ease-out forwards;
+}
+.chargeMinigameComponent_spinPoint.highlight {
+    animation: spinPoint_highlight 0.5s ease-out forwards;
+}
+@keyframes spinPoint_visible {
+    0% { 
+        box-shadow: none;
+        background-color: rgba(253, 255, 136, 0);
+    }
+    100% { 
+        box-shadow: 0 0 0.5vh rgb(253, 255, 136);
+    }
+        
+}
+@keyframes spinPoint_invisible {
+    0% { 
+        box-shadow: 0 0 0.25vh rgb(253, 255, 136), 0 0 0.5vh rgb(253, 255, 136), 0 0 0.75vh rgb(253, 255, 136);
+        background-color: rgba(253, 255, 136, 1);
+    }
+    33% { 
+        box-shadow: 0 0 0.5vh rgb(253, 255, 136), 0 0 0.75vh rgb(253, 255, 136), 0 0 1vh rgb(253, 255, 136);
+    }
+    100% { 
+        box-shadow: none;
+        background-color: rgba(253, 255, 136, 0);
+    }
+        
+}
+@keyframes spinPoint_highlight {
+    0% { 
+        box-shadow: none;
+        background-color: rgba(253, 255, 136, 0);
+    }
+    33% { 
+        box-shadow: 0 0 0.5vh rgb(253, 255, 136), 0 0 0.75vh rgb(253, 255, 136), 0 0 1vh rgb(253, 255, 136);
+        background-color: rgba(253, 255, 136, 1);
+    }
+    100% { 
+        box-shadow: 0 0 0.25vh rgb(253, 255, 136), 0 0 0.5vh rgb(253, 255, 136), 0 0 0.75vh rgb(253, 255, 136);
+        background-color: rgba(253, 255, 136, 1);
+    }
+        
+}
+
+
+
+.inputElement_textHint {
+    width: 100%;
+    height: auto;
+    max-height: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    margin-top: auto;
+    margin-bottom: 0.2vh;
+}
+.inputElement_absoluteHint {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+.inputElement_textHint > p {
+    text-align: center;
+    vertical-align: middle;
+    opacity: 0.5;
+}
+
+
+.inputElement_powerBoundsComponent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upgradeComponent_infoText {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.upgradeComponent_infoText > div {
+    display: flex;
+    flex-direction: row;
+}
+.upgradeComponent_infoText > div:first-child {
+    margin-bottom: 0.4vh;
+}
+.upgradeComponent_infoText > div:last-child {
+    margin-top: 0.4vh;
+}
+.upgradeComponent_infoText > div > p {
+    text-align: center;
+    vertical-align: middle;
+    opacity: 0.5;
+}
+
+
+
+.inputElement_resourceExchangeComponent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+.resourceExchangeComponent_exchangeButton {
+    width: 100%;
+    height: auto;
+    max-height: 20%;
+    margin: 2% 0%;
+    flex-grow: 1;
+}
+
+.resourceExchangeComponent_actionSelectors {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.exchangeResourceSelector {
+    position: relative; 
+    background-color: rgb(65, 55, 112);
+    border: 1px solid rgb(20, 20, 32);
+    border-radius: 1vh;
+    z-index: 2;
+}
+.exchangeResourceSelector_selectorDisplay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.4vh;
+    align-items: baseline;
+}
+.exchangeResourceSelector_selectorList {
+    position: absolute;
+    width: 100%;
+    top:-0.1vh;
+    left:-0.1vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(65, 55, 112);
+    border: 0.1vh solid rgb(20, 20, 32);
+    border-radius: 1vh;
+}
+.exchangeResourceSelector_resourceButton:last-child {
+    margin-bottom: 0.4vh;
+}
+.exchangeResourceSelector_resourceButton {
+    width: 2.5vh;
+    height: 2.5vh;
+    padding: 0;
+    border-radius: 1.25vh;
+    margin: 0.2vh 0;
+}
+
+.resourceExchangeComponent_selectionHint {
+    width: 100%;
+    height: 100%;
+    max-height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.resourceExchangeComponent_selectionHint > p {
+    text-align: center;
+    vertical-align: middle;
+    color:white;
+    opacity: 0.5;
+}
+.resourceExchangeComponent_resourceSliders {
+    padding: 0 2vh;
+}
+
+.crankInputHandler_container {
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.crankInputHandler_counter {
+    position: relative;
+    border-radius: 100%;
+    border: 4px solid gray;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;  
+}
+.crankInputHandler_strengthContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.crankInputHandler_strengthArrow{
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 2.5px);
+    height: 50%;
+    width: 5px;
+    border-radius: 2.5px;
+    background-color: white;
+    transform-origin: top;
+}
+.crankInputHandler_strengthArrow.crankInputHandler_strengthArrow_short{
+    height: 45%;
+}
+.crankInputHandler_counter.strengthDisabled {
+    border-color: gray !important;
+    transition: border-color 0.5s;
+}
+.crankInputHandler_strengthArrow.strengthDisabled {
+    background-color: gray !important;
+    transition: background-color 0.5s;
+}
+
+
+div.succeeded {
+    animation: div_succeeded 0.25s ease-out;
+}
+@keyframes div_succeeded {
+    0% { box-shadow: 0 0 5px rgb(107, 255, 87), 0 0 10px rgb(107, 255, 87), 0 0 15px rgb(107, 255, 87); }
+    100% { box-shadow: none;}
+}
+
+.crankInputHandler_crank {
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 9%;
+    width: 65%;
+    height: 65%;
+
+    border-radius: 100%;
+    border-top-right-radius: 0;
+    background-color:  rgb(95, 55, 200);
+    border: 1px solid  rgb(20, 20, 32);
+    pointer-events: none;
+
+    transform-origin: center;
+}
+.crankInputHandler_pointer {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    right: 0;
+    top: 0;
+
+    border-radius: 0;
+    border-bottom-left-radius: 100%;
+    background-color: rgb(203, 182, 255);
+    pointer-events: none;
+}
+.crankInputHandler_coolerImg {
+    position: absolute;
+    max-width: 80%;
+    max-height: 80%;
+    margin: 10%;
+    transform: scaleX(-1) rotate(-45deg);
+}
+.crankInputHandler_resourceImg {
+    position: absolute;
+    max-width: 30%;
+    max-height: 30%;
+    margin: 30%;
+    padding: 5%;
+    transform: rotate(45deg);
+    border-radius: 100%;
+    background-color: white;
+}

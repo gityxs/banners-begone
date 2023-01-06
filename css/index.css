@@ -1,0 +1,519 @@
+@font-face {
+    font-family: "Nunito";
+    src: url(fonts/Nunito/Nunito-ExtraLight.woff);
+    font-weight: 200;
+}
+@font-face {
+    font-family: "Nunito";
+    src: url(fonts/Nunito/Nunito-Light.woff);
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Nunito";
+    src: url(fonts/Nunito/Nunito-Regular.woff);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Nunito";
+    src: url(fonts/Nunito/Nunito-SemiBold.woff);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Nunito";
+    src: url(fonts/Nunito/Nunito-Bold.woff);
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Nunito";
+    src: url(fonts/Nunito/Nunito-ExtraBold.woff);
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Segoe";
+    src: url(fonts/Segoe/SegoeUIEmoji.woff);
+    font-weight: 400;
+}
+
+html {
+    font-family: "Nunito", sans-serif;
+}
+
+img.iconSymbol {
+    display: inline;
+    height: 1.25em;
+    width: 1.25em;
+    vertical-align: sub;
+    padding: 0 0.2em;
+}
+.resourceValue {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+
+
+    background-color:  #1f223d;
+    border-radius:1vh;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    font-size: smaller;
+    color: white;
+
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+
+    overflow: hidden;
+    overflow-x: auto;
+    
+}
+
+@media only screen and (max-height: 850px) {
+    body {
+        font-size: 60%;
+    }
+}
+@media only screen and (max-height: 550px) {
+    body {
+        font-size: 50%;
+    }
+}
+
+div {
+    background-color: rgba(255,255,255,0);
+}
+p {
+    padding: 0 0.2vh 0 0.2vh;
+    margin: 0;
+}
+
+
+button { 
+    cursor:pointer; 
+    background-color: rgb(65, 55, 112);
+    border: 1px solid rgb(20, 20, 32);
+    border-radius: 1vh;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: white;
+    font-size: inherit;
+
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+}
+button:hover { 
+    background-color:rgb(59, 49, 104);
+}
+button:active {
+    background-color: rgb(65, 55, 112);
+}
+button:focus {
+    outline: none;
+}
+button:disabled {
+    background-color: rgb(82, 74, 119) !important;
+    color:rgba(255,255,255,0.5) !important;
+    cursor: default;
+}
+.disabled {
+    background-color: rgb(82, 74, 119) !important;
+    color:rgba(255,255,255,0.5) !important;
+    pointer-events: none !important;
+    cursor: default;
+}
+
+
+
+button.ad { 
+    color:black;
+    cursor:pointer; 
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 0.5vh;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: white;
+    padding-right: 1px;
+    padding-right: 1px;
+}
+button.ad:hover { 
+    background-color:rgb(238, 238, 238);
+}
+button.ad:active {
+    background-color:rgb(255, 255, 255);
+}
+button.ad:focus {
+    outline: none;
+}
+button.ad:disabled {
+    background-color: rgb(167, 168, 168) !important;
+}
+
+
+
+
+#inputCanvas {
+    box-sizing: border-box;
+    width: 100%; 
+    height: 100%;
+    position: absolute;
+    top: 0;
+    cursor: crosshair;
+}
+#inputDiv {
+    box-sizing: border-box;
+    border: solid 1px black;
+    width: 100%; 
+    height: 100%;
+    position: relative;
+}
+
+
+
+.toolContainer {
+    width: 100%;
+    height: 10vh;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.toolSelector {
+    width: 10vh;
+    background-color: lightgrey;
+    margin-right: 1vh;
+}
+.selectedOption {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+
+
+.inputStats {
+    width: 100%;
+    height: 2.5vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+.inputStats > p {
+    border: 1px dashed gray;
+    box-sizing: border-box;
+}
+.inputBar {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+#chargeMinigameButton {
+    height: 4vh;
+}
+#chargeCooldownBar {
+    height: 4vh;
+}
+
+.hidden {
+    display: none !important;
+    pointer-events: none !important;
+}
+.hidden_fade {
+    opacity: 0;
+    animation: hidden_fade 0.5s ease-in-out;
+}
+@keyframes hidden_fade {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+
+.anim_flash_blue {
+    animation: flash_blue 0.2s linear 1;
+}
+
+.anim_flash_green {
+    animation: flash_green 0.2s linear 1;
+}
+
+.anim_flash_red {
+    animation: flash_red 0.2s linear 1;
+}
+
+.anim_ambientFlash_gray {
+    animation: ambientFlash_gray 2.0s ease-in-out infinite;
+}
+
+.anim_quickFlash_blue {
+    animation: ambientFlash_blue 0.25s linear infinite;
+}
+
+@keyframes flash_blue {
+  0% { background-color:  rgb(95, 55, 200); }
+}
+
+@keyframes flash_green {
+  0% { background-color: lightgreen; }
+}
+
+@keyframes flash_red {
+  0% { background-color: rgb(255, 125, 125); }
+}
+
+@keyframes ambientFlash_gray {
+  0% { background-color:#2d325a; }
+  50% { background-color: rgb(210, 210, 210) }
+  100% { background-color: #2d325a; }
+}
+
+@keyframes ambientFlash_blue {
+  0% { background-color: #2d325a; }
+  50% { background-color: rgb(95, 55, 200); }
+  100% { background-color: #2d325a; }
+}
+
+
+
+.areaBoundsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 2vh;
+    margin: 0 7px;
+}
+.areaBoundsBottom:first-child {
+    border-left: none;
+}
+.areaBoundsBottom:last-child {
+    border-right: none;
+}
+.areaBoundsBottom {
+    box-sizing: border-box;
+    border: 2px dashed rgb(236, 56, 95);
+    border-top: none;
+}
+
+.areaBoundsMax {
+    border-width: 2px;
+    border-color: rgb(52, 211, 87);
+}
+
+
+#resourceList {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+    width: 95vh;
+    height: calc(5vh - 10px);
+
+    background-color: #13152a;
+    border-radius: 1vh;
+}
+#resourceList > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width:33.3333%;
+    z-index: 1;
+    box-sizing: border-box;
+    height: calc(100% - 1vh);
+    margin:0.5vh;
+}
+#resourceList > div > p {
+    margin: auto 0;
+}
+
+
+.popupResourceWrapper {
+    pointer-events: none;
+    position: relative;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow: visible;
+    white-space: nowrap; 
+}
+.resourcePopup {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    opacity: 0;
+}
+.resourcePopup > p {
+    margin: auto;
+    font-size: 200%;
+    border-radius: 0.5vh;
+    padding: 0.5vh;
+    opacity: 1;
+    font-weight: bolder;
+    text-shadow: #000 0px 0px 5px, #000 0px 0px 5px;
+}
+.popup_disappear {
+    animation-iteration-count: 1;
+    animation: popup_disappear 0.5s ease-out;
+}
+.popupVibrate {
+    animation-iteration-count: 1;
+    animation: popup_vibrate 0.5s ease-out;
+    transform-origin: center;
+}
+@keyframes popup_disappear_up {
+    0% { bottom: 0px; opacity: 1; }
+    95% {opacity: 0;}
+    100% { bottom: 25px; opacity: 0; }
+}
+@keyframes popup_disappear_down {
+    0% { top: 0px; opacity: 1; }
+    95% {opacity: 0;}
+    100% { top: 25px; opacity: 0; }
+}
+@keyframes popup_vibrate {
+    0%, 8%, 16%, 24%, 32%, 40%, 48%, 56%, 64%, 72%, 80%, 88%, 96% {
+        transform: translate(2px, 2px) rotate(-1deg);
+    }
+    2%, 10%, 18%, 26%, 34%, 42%, 50%, 58%, 66%, 74%, 82%, 90%, 98% {
+        transform: translate(-2px, -2px) rotate(1deg);
+    } 
+    4%, 12%, 20%, 28%, 36%, 44%, 52%, 60%, 68%, 76%, 84%, 92%, 100% {
+        transform: translate(-2px, 2px) rotate(-1deg);
+    }
+    6%, 14%, 22%, 30%, 38%, 46%, 54%, 62%, 70%, 78%, 86%, 94% {
+        transform: translate(2px, -2px) rotate(1deg);
+    }
+
+    0% { opacity: 1;}
+    95% {opacity: 0;}
+    100% {opacity: 0;}
+
+}
+
+
+.linkLockedPopupWrapper {
+    pointer-events: none;
+    position: relative;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow: visible;
+    white-space: nowrap; 
+}
+.linkLockedPopup {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    opacity: 0;
+
+    animation-iteration-count: 1;
+    animation: popupLockedLink_disappear_up 0.75s linear;
+}
+.linkLockedPopup > p {
+    margin: auto;
+    font-size: 200%;
+    border-radius: 0.5vh;
+    padding: 0.5vh;
+    opacity: 1;
+    font-weight: bolder;
+    
+    text-decoration: underline;
+    /*background: rgb(68, 98, 233);*/
+    color: rgb(78, 95, 248);
+    text-shadow: #000 0px 0px 5px, #000 0px 0px 5px;
+}
+@keyframes popupLockedLink_disappear_up {
+    0% { bottom: 0px; opacity: 1; }
+    20% {text-decoration: underline; }
+    20%, 40%, 60%, 80% {opacity: 1;}
+    30%, 50%, 90% {opacity: 0; text-decoration: line-through rgb(95, 143, 255); }
+    100% { bottom: 50px; opacity: 0; }
+}
+
+
+
+
+
+.resourceColor_gained {
+    color: rgb(150, 255, 50);
+}
+.resourceColor_spent {
+    color: rgb(150, 150, 255);
+}
+.resourceColor_low {
+    color: rgb(255, 90, 90);
+}
+
+
+
+mark.colorInverse {
+    background: white !important;
+    color: rgb(110, 110, 110) !important;
+    border-radius: 0.4vh;
+    padding: 0 0.4vh;
+    font-weight: normal;
+}
+mark.resourceLow {
+    background: rgb(255, 33, 33);
+    color: rgb(0, 0, 0);
+    border-radius: 0.4vh;
+    padding: 0 0.4vh;
+    font-weight: bold;
+
+    box-shadow: #000 0px 0px 5px, #000 0px 0px 5px;
+    text-shadow: none;
+}
+mark.smallerText {
+    font-size: 65%;
+    background: inherit;
+    color: inherit;
+}
+mark.biggerText {
+    font-size: 135%;
+    background: inherit;
+    color: inherit;
+}
+mark.strikethrough {
+    background: inherit;
+    color: gray;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+a {
+    color: rgb(78, 95, 248);
+}
+a:hover {
+    color: rgb(37, 56, 228);
+}

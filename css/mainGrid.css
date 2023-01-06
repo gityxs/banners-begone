@@ -1,0 +1,841 @@
+#mainGridContainerWrapper {
+    position: relative;
+    box-sizing: border-box;
+    width: 95vh;
+    height: 95vh;
+    background-color: #1f223d;
+    border-radius: 1vh;
+}
+
+#mainGridContainer {
+    width:100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    z-index: -10;
+}
+
+.mainGridElementContainer {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    pointer-events: none;
+    padding: 0.5vh;
+    min-height: 0;
+    min-width: 0;
+
+    background-color: #1f223d;
+    border-radius: 1vh;
+}
+.mainGridElement {
+    position: static;
+    z-index: -2;
+    box-sizing: border-box;
+    overflow: hidden;
+    pointer-events: auto;
+    border-radius: 1vh;
+    border: none;
+    background-color: #2d325a;
+    width: 100%;
+    height: 100%;
+
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+}
+
+.mainGridElement > button {
+    width: 100%;
+    height: 100%;
+}
+.mainGridElement > div {
+    padding: 1vh;
+    width: calc(100% - 2vh);
+    height: calc(100% - 2vh);
+}
+
+.adCoverElementContainer {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    pointer-events: none;
+    z-index: 5;
+}
+.adCover {
+    box-sizing: border-box;
+    overflow: hidden;
+    position: absolute;
+    pointer-events: auto;
+    width: 100%;
+    height: 100%;
+    font-size: 75%;
+    
+    background-color: rgb(65, 55, 112);
+
+    border: 6px ridge rgb(241, 255, 254);
+}
+
+@media only screen and (max-height: 850px) {
+    .adCover {
+        font-size: 70%;
+    }
+}
+@media only screen and (max-height: 550px) {
+    .adCover {
+        font-size: 60%;
+    }
+}
+
+.adCover > * {
+    white-space: nowrap;
+}
+.adCoverImg {
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+    opacity: 1;
+}
+
+.adInteraction {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+}
+.adInteraction > *{
+    margin-left: auto;
+}
+
+.adPurgeButton {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.adPurgeCost {
+    margin: 0px 0.1vh;
+    color:rgb(246, 34, 15);
+    font-weight: bolder;
+    
+}
+.adPurgeCosmetic {
+    margin: 0px 0.1vh;
+    color: rgb(246, 34, 15);
+    font-weight: bolder;
+}
+.adPurgeX {
+    font-weight: bolder;
+    color: rgb(202, 33, 3);
+}
+
+.ad.adEncryptButton {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.adEncryptScore {
+    margin: 0px 0.1vh;
+    color: rgb(56, 74, 155);
+    font-weight: bolder;
+    z-index: 2;
+}
+.adEncryptV {
+    font-weight: bolder;
+    color: rgb(26, 25, 129);
+    z-index: 2;
+}
+
+button.ad.adEndlessButton {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+
+    background-color: rgb(173, 106, 218);
+    box-shadow: 0px 0px 10px  rgb(173, 106, 218), 0px 0px 5px rgb(173, 106, 218);
+
+    animation: ad_purge_button_flash_endless 1s linear 3;
+}
+button.ad.adEndlessButton > p {
+    margin: 0px 0.1vh;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: 125%;
+    z-index: 2;
+}
+@keyframes ad_purge_button_flash_endless {
+    0%, 100% {
+        background-color: rgb(173, 106, 218);
+        box-shadow: 0px 0px 10px rgb(173, 106, 218), 0px 0px 5px rgb(173, 106, 218);
+    }
+    40%{
+        background-color: rgb(173, 106, 218);
+        box-shadow: 0px 0px 40px 20px rgb(173, 106, 218), 0px 0px 20px 10px rgb(173, 106, 218);
+    }
+    75% {
+        background-color: white;
+        box-shadow: none;
+    }
+}
+button.ad.adEndlessButton:hover {
+    background-color:  rgb(169, 77, 231) !important;
+}
+
+.adStickyDiv {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+}
+.adRecallButton {
+    background-color: rgb(241, 255, 254);
+    color: rgb(110, 110, 110);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 1em;
+    height: 1em;
+    font-size: 100%;
+    padding: 0.2vh;
+    cursor: pointer;
+    pointer-events: all;
+    align-items: center;
+}
+
+
+
+.clickableGridElement {
+    cursor: pointer;
+}
+.clickableGridElement:hover {
+    box-shadow: 0px 0px 8px #7a59d6;
+}
+.highlightableGridElement {
+    cursor: auto;
+}
+.highlightableGridElement:hover {
+    box-shadow: 0px 0px 8px #7a59d6;
+}
+
+
+
+
+
+
+.adPurgeButton.ad_flash_blue {
+    animation: ad_flash_blue 0.2s linear 1;
+}
+@keyframes ad_flash_blue {
+  0% { background-color:  rgb(185, 168, 240); }
+}
+
+.adPurgeAnimation {
+    transform-origin: center;
+    animation: ad_purge_animation 0.25s linear forwards;
+
+    opacity: 0;
+    transform: scaleX(2) scaleY(0.25);
+}
+.adCover.adPurgeAnimation > img {
+    opacity: 0;
+    animation: ad_purge_img_color 0.1s linear !important;
+}
+@keyframes ad_purge_animation {
+    0% {
+        transform: scaleX(1) scaleY(1);
+        opacity: 1;
+        border: 6px ridge rgb(241, 255, 254);
+        background-color:rgb(65, 55, 112);
+    }
+    10% {
+        transform: scaleX(0.75) scaleY(0.75);
+    }
+    50% {
+        transform: scaleX(0.5) scaleY(0.3);
+        opacity: 1;
+        border: 0px ridge red;
+        background-color: red;
+    }
+    60% {
+        transform: scaleY(0.75);
+    }
+    70% {
+        transform: scaleX(1.5) scaleY(0.25);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scaleX(2.5) scaleY(0);
+        opacity: 0;
+        
+    }
+}
+@keyframes ad_purge_animation_color {
+ 0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes ad_purge_img_color {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.adPurgeButtonFlash {
+    background-color: rgb(134, 236, 134);
+    animation: ad_purge_button_flash_red 2s ease-out 1 forwards;
+}
+@keyframes ad_purge_button_flash_red {
+    10%, 100% {
+        background-color: rgb(134, 236, 134);
+        box-shadow: 0px 0px 20px  rgb(35, 158, 35), 0px 0px 10px rgb(35, 158, 35);
+    }
+}
+button.ad.adPurgeButtonFlash:hover {
+    background-color:  rgb(102, 216, 102) !important;
+}
+
+.adTransformAnimation {
+    animation: ad_transform_animation 3s ease-in-out !important;
+}
+@keyframes ad_transform_animation {
+    15% {
+        transform: scaleX(1.4) scaleY(1.4);
+    }
+    30% {
+        transform: scaleX(0.85) scaleY(0.85);
+    }
+    45% {
+        transform: scaleX(1.25) scaleY(1.25);
+    }
+    60% {
+        transform: scaleX(0.9) scaleY(0.9);
+    }
+    75% {
+        transform: scaleX(1.1) scaleY(1.1);
+    }
+    90% {
+        transform: scaleX(0.95) scaleY(0.95);
+    }
+    90% {
+        transform: scaleX(1) scaleY(1);
+    }
+}
+
+.adResourceSuckAnimation {
+    transform-origin: center;
+    animation: ad_resource_suck_animation 1s linear infinite;
+
+    transform: scaleX(1) scaleY(1);
+}
+@keyframes ad_resource_suck_animation {
+    0% {
+        transform: scaleX(1.1) scaleY(1);
+    }
+    25% {
+        transform: scaleX(1) scaleY(1.05);
+    }
+    50% {
+        transform: scaleX(1) scaleY(1.1);
+    }
+    75% {
+        transform: scaleX(1.05) scaleY(1);
+    }
+    100% {
+        transform: scaleX(1.1) scaleY(1);
+    }
+}
+
+.adRegrowAnimation_right {
+    transform-origin: center;
+    animation: ad_regrow_animation_right 0.25s linear;
+}
+.adRegrowAnimation_left {
+    transform-origin: center;
+    animation: ad_regrow_animation_left 0.25s linear;
+}
+.adRegrowAnimation_up {
+    transform-origin: center;
+    animation: ad_regrow_animation_up 0.25s linear;
+}
+.adRegrowAnimation_down {
+    transform-origin: center;
+    animation: ad_regrow_animation_down 0.25s linear;
+}
+@keyframes ad_regrow_animation_right {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(3px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes ad_regrow_animation_left {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes ad_regrow_animation_up {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes ad_regrow_animation_down {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.adAlreadyFrozenAnimation_right {
+    transform-origin: center;
+    animation: ad_regrow_animation_right 0.25s linear;
+}
+.adAlreadyFrozenAnimation_left {
+    transform-origin: center;
+    animation: ad_alreadyFrozen_animation_left 0.25s linear;
+}
+.adAlreadyFrozenAnimation_up {
+    transform-origin: center;
+    animation: ad_alreadyFrozen_animation_up 0.25s linear;
+}
+.adAlreadyFrozenAnimation_down {
+    transform-origin: center;
+    animation: ad_alreadyFrozen_animation_down 0.25s linear;
+}
+@keyframes ad_alreadyFrozen_animation_right {
+    0% {
+        transform: translateX(0);
+        box-shadow: 0px 0px 0px rgb(200, 75, 75);
+    }
+    25% {
+        transform: translateX(1.5px);
+        box-shadow: 0px 0px 10px rgb(255, 54, 54), 0px 0px 5px rgb(200, 75, 75);
+    }
+    100% {
+        transform: translateX(0);
+        box-shadow: 0px 0px 0px rgb(200, 75, 75);
+    }
+}
+@keyframes ad_alreadyFrozen_animation_left {
+    0% {
+        transform: translateX(0);
+        box-shadow: 0px 0px 0px rgb(200, 75, 75);
+    }
+    25% {
+        transform: translateX(-1.5px);
+        box-shadow: 0px 0px 10px rgb(255, 54, 54), 0px 0px 5px rgb(200, 75, 75);
+    }
+    100% {
+        transform: translateX(0);
+        box-shadow: 0px 0px 0px rgb(200, 75, 75);
+    }
+}
+@keyframes ad_alreadyFrozen_animation_up {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0px 0px 0px rgb(200, 75, 75);
+    }
+    25% {
+        transform: translateY(1.5px);
+        box-shadow: 0px 0px 10px rgb(255, 54, 54), 0px 0px 5px rgb(200, 75, 75);
+    }
+    100% {
+        transform: translateY(0);
+        box-shadow: 0px 0px 0px rgb(200, 75, 75);
+    }
+}
+@keyframes ad_alreadyFrozen_animation_down {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0px 0px 0px rgb(200, 75, 75);
+    }
+    25% {
+        transform: translateY(-1.5px);
+        box-shadow: 0px 0px 10px rgb(255, 54, 54), 0px 0px 5px rgb(200, 75, 75);
+    }
+    100% {
+        transform: translateY(0);
+        box-shadow: 0px 0px 0px rgb(200, 75, 75);
+    }
+}
+  
+
+.mainGridShake {
+    transform-origin: center;
+    animation: mainGrid_shake 0.5s linear;
+}
+@keyframes mainGrid_shake {
+    0%, 10%, 100% {
+        transform: translate(0, 0) rotate(0);
+    }
+    20%, 60% {
+        transform: translate(1px, 1px) rotate(-0.1deg);
+    }
+    40%{
+        transform: translate(-1px, 1px) rotate(0.1deg);
+    }
+}
+.mainGridShakeSevere {
+    transform-origin: center;
+    animation: mainGrid_shake_severe 0.5s linear;
+}
+@keyframes mainGrid_shake_severe {
+    0%, 10%, 100% {
+        transform: translate(0, 0) rotate(0);
+    }
+    20%, 60% {
+        transform: translate(2px, 2px) rotate(-0.4deg);
+    }
+    40%{
+        transform: translate(-2px, 2px) rotate(0.4deg);
+    }
+}
+
+.mainGridShakeAbsolute {
+    transform-origin: center;
+    animation: mainGrid_shake_absolute 3s linear 1 forwards;
+}
+@keyframes mainGrid_shake_absolute {
+    0% {
+        transform: translate(-10px, -10px) rotate(-2deg);
+    }
+    5% {
+        transform: translate(9.5px, -9.5px) rotate(1.9deg);
+    }
+    10% {
+        transform: translate(-9px, 9px) rotate(1.8deg);
+    }
+    15% {
+        transform: translate(8.5px, 8.5px) rotate(-1.7deg);
+    }
+    20% {
+        transform: translate(-8px, -8px) rotate(1.6deg);
+    }
+    25% {
+        transform: translate(7.5px, -7.5px) rotate(1.5deg);
+    }
+    30% {
+        transform: translate(-7px, 7px) rotate(-1.4deg);
+    }
+    35% {
+        transform: translate(6.5px, 6.5px) rotate(1.3deg);
+    }
+    40% {
+        transform: translate(-6px, -16px) rotate(1.2deg);
+    }
+    45% {
+        transform: translate(5.5px, -5.5px) rotate(-1.1deg);
+    }
+    50% {
+        transform: translate(-5px, 5px) rotate(1deg);
+    }
+    55% {
+        transform: translate(4.5px, 4.5px) rotate(-0.9deg);
+    }
+    60% {
+        transform: translate(-4px, -4px) rotate(0.8deg);
+    }
+    65% {
+        transform: translate(3.5px, -3.5px) rotate(-0.7deg);
+    }
+    70% {
+        transform: translate(-3px, 3px) rotate(0.6deg);
+    }
+    75% {
+        transform: translate(2.5px, 2.5px) rotate(-0.5deg);
+    }
+    80% {
+        transform: translate(-2px, -2px) rotate(0.4deg);
+    }
+    85% {
+        transform: translate(1.5px, -1.5px) rotate(-0.3deg);
+    }
+    90% {
+        transform: translate(-1px, 1px) rotate(0.2deg);
+    }
+    95% {
+        transform: translate(0.5px, 0.5px) rotate(-0.1deg);
+    }
+    100% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+#endlessWarningContainer {
+    z-index:11;
+    pointer-events: none;
+}
+#endlessWarningContainer.gameOverWarning_3 {
+    animation: gameOverWarning_3 3s ease-in-out infinite;
+}
+@keyframes gameOverWarning_3 {
+    0% { box-shadow: none;}
+    50% { box-shadow: inset 0 0 40px rgb(251, 255, 15), inset 0 0 50px rgb(251, 255, 15);}
+    100% { box-shadow: none;}
+}
+#endlessWarningContainer.gameOverWarning_2 {
+    animation: gameOverWarning_2 1s ease-in-out infinite;
+}
+@keyframes gameOverWarning_2 {   
+    0% { box-shadow: none;}
+    50% { box-shadow: inset 0 0 40px rgb(255, 173, 21), inset 0 0 50px rgb(255, 173, 21);}
+    100% { box-shadow: none;}
+}
+#endlessWarningContainer.gameOverWarning_1 {
+    animation: gameOverWarning_1 0.5s linear infinite;
+}
+@keyframes gameOverWarning_1 {
+    0% { box-shadow: inset 0 0 40px rgb(255, 18, 18), inset 0 0 50px rgb(255, 18, 18), inset 0 0 60px rgb(255, 18, 18);}
+    100% { box-shadow: inset 0 0 20px rgb(255, 18, 18), inset 0 0 25px rgb(255, 18, 18), inset 0 0 30px rgb(255, 18, 18);}
+}
+
+.adCover_encryptionRing {
+    position: absolute;
+    max-width: 3vh;
+    max-height: 3vh;
+    z-index: 1000;
+    transform-origin: center;
+    transform: translateX(-1.5vh) translateY(-1.5vh);
+    pointer-events: none;
+}
+.adEncrypt_progress {
+    position: absolute;
+    background-color: rgb(162, 176, 255);
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0.5vh;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.ad.adEncryptButton:hover > .adEncrypt_progress {
+    background-color: rgb(138, 156, 255);
+}
+
+
+.bossAd {
+    z-index: 6;
+}
+.bossAd > *:first-child {
+    border-width: 12px;
+}
+.bossAdBorderAnimation {
+    animation: boss_border 0.25s cubic-bezier(.44,1.5,.51,1);
+}
+.bossAd > *:first-child > .adInteraction {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bossAd > *:first-child > .adInteraction > * {
+    margin-left: 0;
+    padding-right: 6px;
+    border-radius: 0.5vh !important;
+    font-size: 1.2em;
+    letter-spacing: 0em;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes boss_border {
+    0% { border-width: 6px; }
+    100% { border-width: 12px; }
+}
+
+.bossPurgeVibrate {
+    animation: boss_purgeVibrate 1.5s ease-out !important;
+}
+@keyframes boss_purgeVibrate {
+    0%, 22%, 60% {
+        transform: translate(4px, 4px) rotate(-2deg);
+    }
+    4%, 30%, 72% {
+        transform: translate(-4px, -4px) rotate(2deg);
+    } 
+    9%, 39%, 85% {
+        transform: translate(-4px, 4px) rotate(-2deg);
+    }
+    15%, 49% {
+        transform: translate(4px, -4px) rotate(2deg);
+    }
+    100% {
+         transform: translate(0px, 0px) rotate(0);
+    }
+}
+
+.bossEncryptVibrate {
+    animation: boss_encryptVibrate 0.5s linear;
+}
+@keyframes boss_encryptVibrate {
+    0%, 80%{
+        transform: translate(2px, 2px) rotate(-0.5deg);
+    }
+    20%, 100% {
+        transform: translate(-2px, -2px) rotate(0.5deg);
+    } 
+    40% {
+        transform: translate(-2px, 2px) rotate(-0.5deg);
+    }
+    60% {
+        transform: translate(2px, -2px) rotate(0.5deg);
+    }
+}
+
+.bossSpawnChild {
+    animation: bossSpawnChild 4.25s ease-in-out !important;
+}
+@keyframes bossSpawnChild {
+    0% { transform: scale(1); }
+    90% { transform: scale(1.075); }
+    93% { transform: scale(0.99); }
+    100% { transform: scale(1); }
+}
+
+.bossChildSpawnHint {
+    box-sizing: border-box;
+    pointer-events: none;
+    position: relative;
+    min-height: 0;
+    min-width: 0;
+    margin: 0.5vh;
+    width: calc(100% - 1vh);
+    height: calc(100% - 1vh);
+    border-radius: 0.5vh;
+    z-index: 10;
+    overflow: visible;
+    white-space: nowrap; 
+
+    box-shadow: inset 0 0 40px black, inset 0 0 50px black, inset 0 0 60px black, 0 0 0.8vh black, 0 0 0.9vh black, 0 0 1vh black;
+
+    animation: bossChildSpawnHint 5s ease-in-out forwards;
+}
+.bossChildSpawnHint.blue {
+    box-shadow: inset 0 0 40px rgb(0, 160, 255), inset 0 0 50px rgb(0, 160, 255), inset 0 0 60px rgb(0, 160, 255), 0 0 0.8vh rgb(0, 160, 255), 0 0 0.9vh rgb(0, 160, 255), 0 0 1vh rgb(0, 160, 255);
+}
+.bossChildSpawnHint.yellow {
+    box-shadow: inset 0 0 40px rgb(251, 255, 15), inset 0 0 50px rgb(251, 255, 15), inset 0 0 60px rgb(251, 255, 15), 0 0 0.8vh rgb(251, 255, 15), 0 0 0.9vh rgb(251, 255, 15), 0 0 1vh rgb(251, 255, 15);
+}
+.bossChildSpawnHint.orange {
+    box-shadow: inset 0 0 40px rgb(255, 173, 21), inset 0 0 50px rgb(255, 173, 21), inset 0 0 60px rgb(255, 173, 21), 0 0 0.8vh rgb(255, 173, 21), 0 0 0.9vh rgb(255, 173, 21), 0 0 1vh rgb(255, 173, 21);
+}
+.bossChildSpawnHint.red {
+    box-shadow: inset 0 0 40px rgb(255, 18, 18), inset 0 0 50px rgb(255, 18, 18), inset 0 0 60px rgb(255, 18, 18), 0 0 0.8vh rgb(255, 18, 18), 0 0 0.9vh rgb(255, 18, 18), 0 0 1vh rgb(255, 18, 18);
+}
+@keyframes bossChildSpawnHint {
+    0% { opacity: 0; }
+    4% { opacity: 0.75; }
+    24% { opacity: 0; }
+    28% { opacity: 1; }
+    48% { opacity: 0; }
+    52% { opacity: 1; }
+    72% { opacity: 0; }
+    76% { opacity: 1; }
+    100% { opacity: 0; }
+}
+.adSlither_0 {
+    animation: adSlither 8s ease-in infinite;
+}
+.adSlither_1 {
+    animation: adSlither 8s ease-in infinite -1s;
+}
+.adSlither_2 {
+    animation: adSlither 8s ease-in infinite -2s;
+}
+.adSlither_3 {
+    animation: adSlither 8s ease-in infinite -3s;
+}
+.adSlither_4 {
+    animation: adSlither 8s ease-in infinite -4s;
+}
+.adSlither_5 {
+    animation: adSlither 8s ease-in infinite -5s;
+}
+.adSlither_6 {
+    animation: adSlither 8s ease-in infinite -6s;
+}
+.adSlither_7 {
+    animation: adSlither 8s ease-in infinite -7s;
+}
+
+/*
+@keyframes adSlither {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(0.75deg); }
+    75% { transform: rotate(-0.75deg); }
+    100% { transform: rotate(0); }
+}
+*/
+@keyframes adSlither {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-1px, 0); }
+    40% { transform: translate(1px, 0); }
+    60% { transform: translate(0, -1px); }
+    80% { transform: translate(0, 1px); }
+    100% { transform: translate(0, 0); }
+}
+
+
+.adPurgeShift {
+    z-index: 7;
+    animation: adPurgeShift 0.15s linear forwards;
+}
+@keyframes adPurgeShift {
+    0% { transform: translate(0, 0) }
+    25% { transform: translate(0, 0) }
+    /* 100% { transform: translate(0, -50vh) } */
+}

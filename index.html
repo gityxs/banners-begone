@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+    <meta charset=utf-8>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/mainGrid.css" />
+    <link rel="stylesheet" type="text/css" href="css/upgrades.css" />
+    <link rel="stylesheet" type="text/css" href="css/menus.css" />
+    <link rel="stylesheet" type="text/css" href="css/defaultSlider.css" />
+    <link rel="stylesheet" type="text/css" href="css/gameProgressionScreens.css" />
+
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <title>Banners Begone!</title>
+</head>
+
+<body ondragstart="return false;" ondrop="return false;">
+    <script src="chs.js"></script>
+    <script src="core.js"></script>
+    <div id="pauseGameDiv" class="hidden">
+        <div id="pauseGameContainer">
+            <h2 class="introductionMessage_title"><mark class="biggerText"><img src="svg/pause.svg" alt="pause" class="iconSymbol"></mark> GAME PAUSED</h2>
+        </div>
+    </div>
+
+    <div id="menuBar">
+        <div class="menuBar_grouper">
+            <div class="menuBarButton">
+                <button id="pauseGameButton"><mark class="biggerText"><img src="svg/pause.svg" alt="pause" class="iconSymbol"></mark><p>Pause</p></button>
+            </div>
+            <div class="menuBarButton">
+                <button id="fullscreenButton"><mark class="biggerText"><img src="svg/desktopComputer.svg" alt="monitor" class="iconSymbol"></mark><p>Fullscreen</p></button>
+            </div>
+            <div class="menuBarButton">
+                <button id="accessibilityButton"><mark class="biggerText"><img src="svg/joystick.svg" alt="joystick" class="iconSymbol"></mark>
+                    <p>Motor Accessibility<br>Mode</p>
+                </button>
+            </div>
+            <p><br></p>
+            <div class="menuBarButton">
+                <button id="manualSaveButton"><mark class="biggerText"><img src="svg/floppyDisk.svg" alt="floppy" class="iconSymbol"></mark><p>Manual Save</p></button>
+            </div>
+            <div class="menuBarButton">
+                <button id="resetSaveButton"><mark class="biggerText"><img src="svg/crossMark.svg" alt="cross" class="iconSymbol"></mark><p>Reset Save</p></button>
+            </div>
+            <div class="menuBarButton">
+                <button id="exportSaveButton"><mark class="biggerText"><img src="svg/outboxTray.svg" alt="outbox" class="iconSymbol"></mark><p>Export Save</p></button>
+            </div>
+            <div class="menuBarButton">
+                <button id="importSaveButton"><mark class="biggerText"><img src="svg/inboxTray.svg" alt="inbox" class="iconSymbol"></mark><p>Import Save</p></button>
+                <input id="importSaveField" type="file" class="hidden"></button>
+            </div>
+            <p><br></p>
+            <div class="menuBarButton">
+                <button id="reportBugButton">
+                    <mark class="biggerText"><img src="svg/bug.svg" alt="bug" class="iconSymbol"></mark>
+                    <p>Report a Bug</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScd3XhmrKOzC1xT81cduuC9_hyXW2fK2Q76ciHjFr5uV62gow/viewform?usp=sf_link" target="_blank" class="hidden"></a>
+                </button>   
+            </div>
+            <div class="menuBarButton">
+                <button id="reviewAnalytics"><mark class="biggerText"><img src="svg/writingHand.svg" alt="writingHand" class="iconSymbol"></mark>
+                    <p>Review Analytics<br>Agreement</p>
+                </button>
+            </div>
+            <div class="menuBarButton">
+                <button id="howToPlayButton"><mark class="biggerText"><img src="svg/questionMark.svg" alt="questionMark" class="iconSymbol"></mark><p>How to Play</p></button>
+            </div>
+        </div>
+        <!--
+        <div class="menuBar_textLink">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfB8Z86J5-Cpr763EQRG3IpwKn_YPuZOPT95MVerHhodmGAMQ/viewform?usp=sf_link"
+                target="_blank" class="buttonLinkWrapper"><button>
+                    <p>Feedback Survey!</p>
+                </button></a>
+        </div>
+        -->
+        <div class="menuBar_grouper">
+            <div class="menuBar_logo">
+                <a class="clickableGridElement" href="https://discord.gg/CzRSk8E" target="_blank">
+                    <img alt="on discord" src="logos/discord.png">
+                </a>
+            </div>
+            <div class="menuBar_logo">
+                <a class="clickableGridElement" href="https://www.reddit.com/user/Dreadpon" target="_blank">
+                    <img alt="on reddit" src="logos/reddit.png">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="resourceList">
+    </div>
+    
+    <div id="mainGridContainerWrapper">
+        <div id="mainGridContainer">
+        
+        </div>
+    </div>
+
+    
+
+    
+    <script type="text/javascript" src="scripts/GameAnalytics.js"></script>
+    <script type="text/javascript" src="scripts/analyticsManager.js"></script>
+
+    <script type="text/javascript" src="scripts/symbolDatabase.js"></script>
+    <script type="text/javascript" src="scripts/functionLibrary.js"></script>
+    <script type="text/javascript" src="scripts/timerManager.js"></script>
+    <script type="text/javascript" src="scripts/customSlider.js"></script>
+    <script type="text/javascript" src="scripts/dollarRecognizer.js"></script>
+    <script type="text/javascript" src="scripts/gridManager.js"></script>
+    <script type="text/javascript" src="scripts/customInputElement.js"></script>
+    <script type="text/javascript" src="scripts/progressToolTypes.js"></script>
+    <script type="text/javascript" src="scripts/progressTool.js"></script>
+    <script type="text/javascript" src="scripts/inputHandler.js"></script>
+    <script type="text/javascript" src="scripts/toolComponent.js"></script>
+    <script type="text/javascript" src="scripts/highScores.js"></script>
+
+    <script type="text/javascript" src="scripts/globalAnimations.js"></script>
+    <script type="text/javascript" src="scripts/globalEventListener.js"></script>
+    <script type="text/javascript" src="scripts/dataPreloader.js"></script>
+    <script type="text/javascript" src="scripts/coverageTypes.js"></script>
+    <script type="text/javascript" src="scripts/adCoverage.js"></script>
+    <script type="text/javascript" src="scripts/toolCoverage.js"></script>
+    <script type="text/javascript" src="scripts/gridInitializer.js"></script>
+    <script type="text/javascript" src="scripts/resourceManager.js"></script>
+    <script type="text/javascript" src="scripts/upgradeTypes.js"></script>
+    <script type="text/javascript" src="scripts/upgradeManager.js"></script>
+
+    <script type="text/javascript" src="scripts/gameSave.js"></script>
+    <script type="text/javascript" src="scripts/gameManager.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+<!--客服 开始-->
+<script src="//g8hh.github.io/static/js/jquery.min.js"></script>
+<link rel="stylesheet" href="//g8hh.github.io/static/css/kf.css" type="text/css" media="screen" charset="utf-8">
+<script src="//g8hh.github.io/static/js/kf.js"></script>
+<!-- 客服 结束 -->
+<!--站长统计-->
+    <div style="display: none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?828597e93cee632465679b7ef35edfd5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>    </div>
+</body>
+
+</html>
